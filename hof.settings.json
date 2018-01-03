@@ -1,0 +1,9 @@
+{
+  "theme": "govuk",
+  "routes": [
+    "./apps/digital-inclusion"
+  ],
+  "session": {
+    "name": "digital-inclusion.hof.sid"
+  }
+}
