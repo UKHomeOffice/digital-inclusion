@@ -1,5 +1,12 @@
 {
-  "name": {
-    "header": "Personal details"
+  "confirm": {
+    "sections": {
+      "research-date": {
+        "header": "Research date"
+      },
+      "category": {
+        "header": "Digital inclusion category"
+      }
+    }
   }
 }
