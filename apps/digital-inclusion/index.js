@@ -1,5 +1,7 @@
 'use strict';
 
+const saveData = require('./behaviours/save-data');
+
 module.exports = {
   name: 'digital-inclusion',
   baseUrl: '/',
@@ -21,7 +23,7 @@ module.exports = {
       next: '/confirm',
     },
     '/confirm': {
-      behaviours: ['complete', require('hof-behaviour-summary-page')],
+      behaviours: [saveData, 'complete', require('hof-behaviour-summary-page')],
       next: '/complete'
     },
     '/complete': {
