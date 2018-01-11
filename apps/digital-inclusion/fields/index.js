@@ -3,6 +3,14 @@ const dateComponent = require('hof-component-date');
 
 module.exports = {
   'research-date': dateComponent('research-date'),
+  'project': {
+    mixin: 'select',
+    className: ['typeahead', 'js-hidden'],
+    options: [{
+      value: '',
+      label: 'fields.project.options.null'
+    }].concat('evw', 'registered-traveller')
+  },
   'category': {
     mixin: 'radio-group',
     validate: 'required',

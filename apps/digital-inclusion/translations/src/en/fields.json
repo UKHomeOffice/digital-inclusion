@@ -2,6 +2,9 @@
   "research-date": {
     "label": "Date of research session"
   },
+  "project": {
+    "label": "Project name"
+  },
   "category": {
     "legend": "Digital inclusion category",
     "options": {
