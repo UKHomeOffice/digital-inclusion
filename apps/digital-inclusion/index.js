@@ -6,6 +6,10 @@ module.exports = {
   steps: {
     '/research-date': {
       fields: ['research-date'],
+      next: '/project'
+    },
+    '/project': {
+      fields: ['project'],
       next: '/category'
     },
     '/category': {

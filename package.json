@@ -13,7 +13,9 @@
     "hof-behaviour-summary-page": "^2.0.0",
     "hof-build": "^1.6.0",
     "hof-component-date": "^1.4.0",
-    "hof-theme-govuk": "^4.1.1"
+    "hof-theme-govuk": "^4.1.1",
+    "jquery": "^3.2.1",
+    "typeahead-aria": "^1.0.4"
   },
   "devDependencies": {
     "eslint": "^3.14.0",
