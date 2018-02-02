@@ -4,12 +4,12 @@ module.exports = {
   name: 'digital-inclusion',
   baseUrl: '/',
   steps: {
-    '/research-date': {
-      fields: ['research-date'],
-      next: '/project'
-    },
     '/project': {
       fields: ['project'],
+      next: '/research-date'
+    },
+    '/research-date': {
+      fields: ['research-date'],
       next: '/category'
     },
     '/category': {

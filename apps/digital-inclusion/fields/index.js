@@ -5,6 +5,7 @@ module.exports = {
   'research-date': dateComponent('research-date'),
   'project': {
     mixin: 'select',
+    validate: 'required',
     className: ['typeahead', 'js-hidden'],
     options: [{
       value: '',
