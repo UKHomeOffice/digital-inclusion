@@ -5,10 +5,10 @@ require('./index').start();
 const mysql = require('mysql');
 const config = require('./config');
 const connection = mysql.createConnection({
-  host: config.sql.host,
-  user: config.sql.user,
-  password: config.sql.password,
-  database: config.sql.db
+  host: config.mysql.host,
+  user: config.mysql.user,
+  password: config.mysql.password,
+  database: config.mysql.db
 });
 
 connection.connect((err) => {

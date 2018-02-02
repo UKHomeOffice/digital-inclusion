@@ -4,11 +4,13 @@ const mysql = require('mysql');
 const config = require('../../../config');
 
 const pool = mysql.createPool({
-  host: config.sql.host,
-  user: config.sql.user,
-  password: config.sql.password,
-  database: config.sql.db
+  host: config.mysql.host,
+  user: config.mysql.user,
+  password: config.mysql.password,
+  database: config.mysql.db
 });
+
+const table = 'research_data';
 
 module.exports = superclass => class extends superclass {
   saveValues(req, res, next) {
@@ -20,7 +22,7 @@ module.exports = superclass => class extends superclass {
     // build sql statement to deal with empty researchDate or/and accessNeeds,
     // this will mean a null will go into the db
     // bug: mysql needs insert data to be wrapped in quotations '' even though it is a string
-    let sql = `INSERT INTO research_data SET project='${project}', category='${category}'`;
+    let sql = `INSERT INTO ${table} SET project='${project}', category='${category}'`;
     if (researchDate) {
       sql += `, research_date='${researchDate}'`;
     }
