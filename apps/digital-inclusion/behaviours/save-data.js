@@ -18,7 +18,8 @@ module.exports = superclass => class extends superclass {
       const category = req.sessionModel.get('category');
       const accessNeeds = req.sessionModel.get('access-needs');
 
-      // build sql statement to deal with empty researchDate or/and accessNeeds
+      // build sql statement to deal with empty researchDate or/and accessNeeds,
+      // this will mean a null will go into the db
       // bug: mysql needs insert data to be wrapped in quotations '' even though it is a string
       let sql = `INSERT INTO research_data SET project='${project}', category='${category}'`;
       if (researchDate) {
@@ -30,18 +31,22 @@ module.exports = superclass => class extends superclass {
 
       pool.getConnection((err, connection) => {
       if (err) {
+        // eslint-disable-next-line no-console
         console.error('error connecting: ' + err.stack);
         next(err);
       }
+      // eslint-disable-next-line no-console
       console.info('reconnected to the db!');
 
         connection.query(sql, (error, result) => {
           // when done release the connection to be reused
           connection.release();
           if (error) {
+            // eslint-disable-next-line no-console
             console.error('error connecting: ' + err.stack);
             next(error);
           }
+          // eslint-disable-next-line no-console
           console.info(`Number of records inserted: ${result.affectedRows}`);
         });
       });

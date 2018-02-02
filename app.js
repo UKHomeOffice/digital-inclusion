@@ -13,8 +13,10 @@ const connection = mysql.createConnection({
 
 connection.connect((err) => {
   if (err) {
+    // eslint-disable-next-line no-console
     console.error('error connecting: ' + err.stack);
-    return;
+    return err;
   }
+  // eslint-disable-next-line no-console
   console.log('Db connected as id ' + connection.threadId);
 });
