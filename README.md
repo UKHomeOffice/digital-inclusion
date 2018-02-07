@@ -1,7 +1,8 @@
-# digital inclusion
-A new version of the smartsurvey digital-inclusion app in accordance with the gov uk elements
+# Digital inclusion app
 
-# digital inclusion aims
+An app that allows user researchers to record their digital skills of their participants
+
+# Digital inclusion project aims
 
 The basic user needs underpinning this project are:
 
