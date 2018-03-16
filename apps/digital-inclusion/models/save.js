@@ -15,9 +15,9 @@ const table = 'research_data';
 module.exports = {
   create(options) {
     const project = options.project;
-    const researchDate = options['research-date'];
+    const researchDate = options.researchDate;
     const category = options.category;
-    const accessNeeds = options['access-needs'];
+    const accessNeeds = options.accessNeeds;
 
     // build sql statement to deal with empty researchDate or/and accessNeeds,
     // this will mean a null will go into the db
