@@ -1,11 +1,17 @@
 {
   "confirm": {
     "sections": {
+      "project": {
+        "header": "Project"
+      },
       "research-date": {
         "header": "Research date"
       },
       "category": {
         "header": "Digital inclusion category"
+      },
+      "access-needs": {
+        "header": "Access Needs"
       }
     }
   }
