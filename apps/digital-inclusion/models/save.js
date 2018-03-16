@@ -21,13 +21,12 @@ module.exports = {
 
     // build sql statement to deal with empty researchDate or/and accessNeeds,
     // this will mean a null will go into the db
-    // bug: mysql needs insert data to be wrapped in quotations '' even though it is a string
-    let sql = `INSERT INTO ${table} SET project='${project}', category='${category}'`;
+    let sql = `INSERT INTO ${table} SET project=?, category=?`;
     if (researchDate) {
-      sql += `, research_date='${researchDate}'`;
+      sql += ', research_date=?';
     }
     if (accessNeeds) {
-     sql += `, access_needs='${accessNeeds}'`;
+     sql += ', access_needs=?';
     }
 
     pool.getConnection((err, connection) => {
@@ -37,7 +36,7 @@ module.exports = {
     } else {
       // eslint-disable-next-line no-console
       console.info('reconnected to the db!');
-        connection.query(sql, (error, result) => {
+        connection.query(sql, [project, category, researchDate, accessNeeds], (error, result) => {
           // when done release the connection to be reused
           connection.release();
           if (error) {
