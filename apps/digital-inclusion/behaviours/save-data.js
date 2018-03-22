@@ -1,16 +1,5 @@
 'use strict';
 
-// const mysql = require('mysql');
-// const config = require('../../../config');
-
-// const pool = mysql.createPool({
-//   host: config.mysql.host,
-//   user: config.mysql.user,
-//   password: config.mysql.password,
-//   database: config.mysql.db
-// });
-
-// const table = 'research_data';
 const saveModel = require('../models/save');
 
 module.exports = superclass => class extends superclass {
