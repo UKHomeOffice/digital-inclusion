@@ -30,14 +30,14 @@ module.exports = {
     }
 
     pool.getConnection((err, connection) => {
-    if (err) {
-      // eslint-disable-next-line no-console
-      console.error('error connecting: ' + err.stack);
-    } else {
-      // eslint-disable-next-line no-console
-      console.info('reconnected to the db!');
+      if (err) {
+        // eslint-disable-next-line no-console
+        console.error('error connecting: ' + err.stack);
+      } else {
+        // eslint-disable-next-line no-console
+        console.info('connect to db OR use existing db connection!');
         connection.query(sql, [project, category, researchDate, accessNeeds], (error, result) => {
-          // when done release the connection to be reused
+        // when done release the connection to be reused
           connection.release();
           if (error) {
             // eslint-disable-next-line no-console
