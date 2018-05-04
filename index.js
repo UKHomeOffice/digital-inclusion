@@ -10,7 +10,6 @@ const settings = {
   session: {
     name: 'digital-inclusion.hof.sid'
   },
-  // allows you to have to load browserify file in your views
   csp: {
     styleSrc: ["'unsafe-inline'"]
   }

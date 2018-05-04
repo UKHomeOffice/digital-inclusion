@@ -1,12 +1,14 @@
 'use strict';
 
 const saveData = require('./behaviours/save-data');
+const generateChart = require('./behaviours/generate-chart');
 
 module.exports = {
   name: 'digital-inclusion',
   baseUrl: '/',
   steps: {
     '/chart': {
+      behaviours: generateChart,
       next: '/project'
     },
     '/project': {
