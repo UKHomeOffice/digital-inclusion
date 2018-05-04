@@ -6,6 +6,9 @@ module.exports = {
   name: 'digital-inclusion',
   baseUrl: '/',
   steps: {
+    '/chart': {
+      next: '/project'
+    },
     '/project': {
       fields: ['project'],
       next: '/research-date'

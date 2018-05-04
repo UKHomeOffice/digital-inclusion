@@ -3,8 +3,12 @@
 require('hof-theme-govuk');
 
 var $ = require('jquery');
+
 var typeahead = require('typeahead-aria');
 var Bloodhound = require('typeahead-aria').Bloodhound;
+
+var chart = require('./chart.js');
+chart.initChart();
 
 typeahead.loadjQueryPlugin();
 
