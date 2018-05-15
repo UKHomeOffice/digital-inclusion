@@ -15,7 +15,6 @@ const table = 'research_data';
 module.exports = {
   read(resolve, reject) {
     let sql = `SELECT * FROM ${table}`;
-    console.log('a')
 
     pool.getConnection((err, connection) => {
       if (err) {
@@ -34,7 +33,6 @@ module.exports = {
             console.error('error connecting: ' + error.stack);
           } else {
             // eslint-disable-next-line no-console
-            console.log('hello is it me your looking for');
             // console.log('results', JSON.stringify(results, null, 2));
 
             return resolve(results);
